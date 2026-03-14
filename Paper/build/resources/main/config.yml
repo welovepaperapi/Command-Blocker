@@ -1,0 +1,10 @@
+settings:
+  whitelist-mode: false
+  message: "<gray>[<red>Filter<gray>] <gray>Dieser Befehl ist hier <red>nicht erlaubt<gray>!"
+
+filters:
+  - "pl"
+  - "plugins"
+  - "ver"
+  - "version"
+  - ".*:.*"
