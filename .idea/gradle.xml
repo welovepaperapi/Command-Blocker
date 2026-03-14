@@ -5,7 +5,22 @@
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/Paper" />
         <option name="gradleHome" value="" />
-        <option name="gradleJvm" />
+        <option name="gradleJvm" value="24" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Paper" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Velocity" />
+        <option name="gradleHome" value="" />
+        <option name="gradleJvm" value="24" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Velocity" />
+          </set>
+        </option>
       </GradleProjectSettings>
     </option>
   </component>

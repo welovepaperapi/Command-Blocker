@@ -5,6 +5,9 @@
       <module name="Paper" target="24" />
       <module name="Paper.main" target="24" />
       <module name="Paper.test" target="24" />
+      <module name="Velocity" target="24" />
+      <module name="Velocity.main" target="24" />
+      <module name="Velocity.test" target="24" />
     </bytecodeTargetLevel>
   </component>
 </project>
