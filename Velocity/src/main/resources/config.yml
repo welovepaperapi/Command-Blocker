@@ -1,0 +1,28 @@
+#Bungee, bitte 'announce-proxy-commands' in der velocity.toml auf false stellen :D
+
+settings:
+  whitelist-mode: false
+
+  message: "&8[&bLyndara&8] &cDieser Befehl ist hier nicht erlaubt!"
+
+filters:
+  - "server"
+  - "glist"
+  - "velocity"
+  - "send"
+  - "find"
+  - "alert"
+
+  - "plugins"
+  - "pl"
+  - "ver"
+  - "version"
+  - "help"
+  - "?"
+
+  - ".*:.*"
+
+# Berechtigungen:
+# - commandfilter.admin
+# - commandfilter.bypass.<label>
+# - commandfilter.bypass.*

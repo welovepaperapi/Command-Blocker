@@ -1,43 +1,50 @@
 package net.lyndara.core;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.regex.Pattern;
 
 public class CommandEngine {
 
-    private final List<Pattern> filterPatterns = new ArrayList<>();
-    private boolean whitelistMode = false;
 
-    // aktualisiert filter
+    private final List<Pattern> filterPatterns = new CopyOnWriteArrayList<>();
+    private volatile boolean whitelistMode = false;
+
     public void loadSettings(List<String> rawPatterns, boolean whitelist) {
         this.whitelistMode = whitelist;
         this.filterPatterns.clear();
+
+        if (rawPatterns == null) return;
+
         for (String regex : rawPatterns) {
-            this.filterPatterns.add(Pattern.compile(regex, Pattern.CASE_INSENSITIVE));
+            try {
+                this.filterPatterns.add(Pattern.compile(regex, Pattern.CASE_INSENSITIVE));
+            } catch (Exception e) {
+                System.err.println("[CommandBlocker] Ungültiges Regex-Pattern: " + regex);
+            }
         }
     }
 
     public boolean isAllowed(String commandLine, UserContext user) {
-        if (commandLine == null || commandLine.isEmpty()) return false;
-
-        // / entfernen
-        String label = commandLine.startsWith("/") ? commandLine.substring(1) : commandLine;
-        label = label.split(" ")[0].toLowerCase();
-
-        // bypass
-        if (user.hasPermission("commandfilter.bypass." + label) ||
-                user.hasPermission("commandfilter.bypass.*")) {
-            return false;
+        if (commandLine == null || commandLine.isBlank()) {
+            return true;
         }
 
-        // regex matcher prüfen
-        String finalLabel = label;
+        String cleanLine = commandLine.trim();
+        if (cleanLine.startsWith("/")) {
+            cleanLine = cleanLine.substring(1);
+        }
+
+        String label = cleanLine.split(" ")[0].toLowerCase();
+
+        if (user.hasPermission("commandfilter.bypass." + label) ||
+                user.hasPermission("commandfilter.bypass.*")) {
+            return true;
+        }
+
         boolean matches = filterPatterns.stream()
-                .anyMatch(p -> p.matcher(finalLabel).matches());
+                .anyMatch(p -> p.matcher(label).matches());
 
-        //  Whitelist uberprüfenn
-        return whitelistMode != matches;
+        return whitelistMode == matches;
     }
-
 }

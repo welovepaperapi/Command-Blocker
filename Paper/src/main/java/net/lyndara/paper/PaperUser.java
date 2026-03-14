@@ -15,9 +15,4 @@ public record PaperUser(Player player) implements UserContext {
         player.sendMessage(component);
     }
 
-    @Override
-    public void sendMessage(String message) {
-        player.sendMessage(Component.text(message));
-    }
-
 }
