@@ -1,0 +1,8 @@
+{
+  "id": "commandblocker",
+  "name": "CommandBlocker",
+  "version": "1.0",
+  "description": "Ein Command Filter",
+  "authors": [ "WeLovePaperAPI" ],
+  "main": "net.lyndara.velocity.VelocityLauncher"
+}

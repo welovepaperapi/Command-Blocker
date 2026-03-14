@@ -1,6 +1,15 @@
+buildscript {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("com.github.johnrengelman:shadow:8.1.1")
+    }
+}
+
 plugins {
     java
-    id("com.github.johnrengelman.shadow") version "8.1.1" apply false
 }
 
 allprojects {
@@ -15,8 +24,13 @@ allprojects {
 
 subprojects {
     apply(plugin = "java")
+    apply(plugin = "com.github.johnrengelman.shadow")
 
     java {
         toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+    }
+
+    tasks.withType<Jar> {
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 }
