@@ -19,7 +19,7 @@ public class CommandEngine {
     }
 
     public boolean isAllowed(String commandLine, UserContext user) {
-        if (commandLine == null || commandLine.isEmpty()) return true;
+        if (commandLine == null || commandLine.isEmpty()) return false;
 
         // / entfernen
         String label = commandLine.startsWith("/") ? commandLine.substring(1) : commandLine;
@@ -28,7 +28,7 @@ public class CommandEngine {
         // bypass
         if (user.hasPermission("commandfilter.bypass." + label) ||
                 user.hasPermission("commandfilter.bypass.*")) {
-            return true;
+            return false;
         }
 
         // regex matcher prüfen
@@ -37,6 +37,7 @@ public class CommandEngine {
                 .anyMatch(p -> p.matcher(finalLabel).matches());
 
         //  Whitelist uberprüfenn
-        return whitelistMode ? matches : !matches;
+        return whitelistMode != matches;
     }
+
 }

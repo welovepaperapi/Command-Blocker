@@ -1,1 +1,1 @@
-{"id":"cmmandblocker","name":"CmmandBlocker","version":"1.0","authors":["DeinName"],"dependencies":[],"main":"net.lyndara.velocity.VelocityLauncher"}
+{"id":"commandblocker","name":"CommandBlocker","version":"1.0","authors":["WeLovePaperAPI"],"dependencies":[],"main":"net.lyndara.velocity.VelocityLauncher"}

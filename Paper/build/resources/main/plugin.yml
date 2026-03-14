@@ -4,3 +4,8 @@ main: net.lyndara.paper.PaperLauncher
 api-version: '1.21'
 author: WeLovePaperAPI
 description: Command Filter für Paper und Velocity.
+
+commands:
+  cmreload:
+    description: Lädt die Konfiguration neu.
+    permission: commandfilter.admin
