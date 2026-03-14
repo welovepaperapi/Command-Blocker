@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CmmandBlocker.iml" filepath="$PROJECT_DIR$/CmmandBlocker.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Paper.iml" filepath="$PROJECT_DIR$/Paper.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Paper.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Paper.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Paper.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Paper.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Velocity.iml" filepath="$PROJECT_DIR$/Velocity.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Velocity.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Velocity.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Velocity.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Velocity.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Paper/CmmandBlocker.Paper.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Paper/CmmandBlocker.Paper.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Velocity/CmmandBlocker.Velocity.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Velocity/CmmandBlocker.Velocity.main.iml" />
     </modules>
   </component>
 </project>
