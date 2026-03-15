@@ -1,17 +1,26 @@
-#Bungee, bitte 'announce-proxy-commands' in der velocity.toml auf false stellen :D
+#bitte 'announce-proxy-commands' in der velocity.toml auf false stellen :D
+
+#MySQL/MariaDB
+database:
+  enabled: false
+  host: "localhost"
+  port: 3306
+  name: "minecraft"
+  user: "root"
+  pass: ""
 
 settings:
+  # true = befehle in der liste sind erlaub
+  # false = befehle in der liste werden blockiert
   whitelist-mode: false
-  message: "&8[&bLyndara&8] &cDieser Befehl ist hier nicht erlaubt!"
+
+  message: "&4&lSystem &8» &7Dieser Befehl wurde serverseitig gesperrt."
 
 filters:
   - "pl"
   - "plugins"
   - "ver"
   - "version"
-  - ".*:.*"
-
-# Berechtigungen:
-# - commandfilter.admin
-# - commandfilter.bypass.<label>
-# - commandfilter.bypass.*
+  - "icanhasbukkit"
+  - "help"
+  - "stop"

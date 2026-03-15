@@ -1,18 +1,12 @@
 package net.lyndara.paper;
 
-import net.kyori.adventure.text.Component;
 import net.lyndara.core.UserContext;
 import org.bukkit.entity.Player;
 
 public record PaperUser(Player player) implements UserContext {
+    @Override
+    public boolean hasPermission(String permission) { return player.hasPermission(permission); }
 
     @Override
-    public boolean hasPermission(String permission) {
-        return player.hasPermission(permission);
-    }
-
-    public void sendMessage(Component component) {
-        player.sendMessage(component);
-    }
-
+    public void sendMessage(String message) { player.sendMessage(message.replace("&", "§")); }
 }
